@@ -1,0 +1,7 @@
+<link rel="stylesheet" href="/css/home.css">
+
+<% if(locals.user) { %>
+    <%- include('_chat_box') -%>
+<% } else { %>
+    <%- include('_default') -%>
+<% } %>
