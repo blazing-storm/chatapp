@@ -5,18 +5,18 @@
 
     <ul>
         <% if(locals.user) { %>
-            <li>
-                <a href="/users/profile/<%= user.id %>"> <%= user.name %> </a>
+            <li id="user-name">
+                <%= user.name %>
             </li>
             <li>
-                <a href="/users/sign-out"> Sign Out </a>
+                <a href="/users/sign-out"> SignOut </a>
             </li>
         <% } else { %>
             <li>
-                <a href="/users/sign-in"> Sign In </a>
+                <a href="/users/sign-in"> SignIn </a>
             </li>
             <li>
-                <a href="/users/sign-up"> Sign Up </a>
+                <a href="/users/sign-up"> SignUp </a>
             </li>
         <% } %>
     </ul>
