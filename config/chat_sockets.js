@@ -1,4 +1,9 @@
 module.exports.chatSockets = function(socketServer) {
+    // deprecated code from v2
+    // let io = require('socket.io')(socketServer);
+
+    // Since Socket.IO v3, you need to explicitly enable Cross-Origin Resource Sharing (CORS).
+    // https://socket.io/docs/v4/handling-cors/
     let io = require('socket.io')(socketServer, {
         cors: {
             origin: "*",
@@ -22,6 +27,7 @@ module.exports.chatSockets = function(socketServer) {
             io.in(data.chatroom).emit('user_joined', data);
         });
 
+        // CHANGE :: detect send_message and broadcast to everyone in the room
         socket.on('send_message', function(data) {
             io.in(data.chatroom).emit('receive_message', data);
         });
