@@ -1,23 +1,30 @@
 <header id="layout-header">
-    <h1>
-        <a href="/"> Scratch </a>
-    </h1>
+    <nav class="navbar-items">
+        <div class="navbar-link">
+            <a href="/">
+                <i class="fa-regular fa-message"></i>
+                ChatApp 
+            </a>
+        </div>
+    </nav>
 
-    <ul>
+    <nav class="navbar-items navbar-items-right">
         <% if(locals.user) { %>
-            <li id="user-name">
+            <div class="navbar-link">
                 <%= user.name %>
-            </li>
-            <li>
+            </div>
+
+            <div class="navbar-link">
                 <a href="/users/sign-out"> SignOut </a>
-            </li>
+            </div>
         <% } else { %>
-            <li>
+            <div class="navbar-link">
                 <a href="/users/sign-in"> SignIn </a>
-            </li>
-            <li>
+            </div>
+
+            <div class="navbar-link">
                 <a href="/users/sign-up"> SignUp </a>
-            </li>
+            </div>
         <% } %>
-    </ul>
+    </nav>
 </header>

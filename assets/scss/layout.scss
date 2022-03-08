@@ -1,15 +1,18 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+
 :root {
   --color-white: #f3f3f3;
   --color-darkblue: #1b1b32;
   --color-darkblue-alpha: rgba(27, 27, 50, 0.8);
   --color-green: #37af65;
-  font-size: 10px; }
+  font-size: 10px;
+}
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -17,8 +20,9 @@ body {
   font-weight: 400;
   line-height: 1.4;
   color: var(--color-white);
-  margin: 0; }
-  body #layout-main {
+  margin: 0;
+
+  #layout-main {
     background: var(--color-darkblue-alpha);
     width: 100%;
     max-width: 720px;
@@ -26,12 +30,23 @@ body {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center; }
-    body #layout-main h1 {
+    justify-content: center;
+
+    h1 {
       font-weight: 400;
-      line-height: 1.2; }
-    body #layout-main p {
-      font-size: 1.8rem; }
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 1.8rem;
+    }
+
+    // h1, p {
+    //   margin-top: 0;
+    //   margin-bottom: 0.8rem;
+    // }
+  }
+}
 
 body::before {
   content: '';
@@ -42,7 +57,13 @@ body::before {
   width: 100%;
   z-index: -1;
   background: var(--color-darkblue);
-  background-image: linear-gradient(115deg, rgba(58, 58, 158, 0.8), rgba(136, 136, 206, 0.7)), url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+  background-image: linear-gradient(
+      115deg,
+      rgba(58, 58, 158, 0.8),
+      rgba(136, 136, 206, 0.7)
+    ),
+    url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+}

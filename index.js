@@ -22,13 +22,13 @@ chatServer.listen(5000);
 console.log('Chat Server is listening on port: 5000');
 
 // gets compiled when the page loads
-// app.use(sassMiddleware({
-//     src: './assets/scss',
-//     dest: './assets/css',
-//     debug: true,
-//     outputStyle: 'extended',
-//     prefix: '/css'
-// }));
+app.use(sassMiddleware({
+    src: './assets/scss',
+    dest: './assets/css',
+    debug: true,
+    outputStyle: 'extended',
+    prefix: '/css'
+}));
 
 app.use(express.urlencoded());
 app.use(cookieParser());

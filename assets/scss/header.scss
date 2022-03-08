@@ -1,0 +1,25 @@
+#layout-header {
+  background: var(--color-darkblue-alpha);
+  display: flex;
+  padding: 16px 24px;
+  width: 80%;
+  margin: 10px auto;
+
+  .navbar-items {
+    display: flex;
+  }
+
+  .navbar-items-right {
+    margin-left: auto;
+
+    .navbar-link {
+      padding-left: 8px;
+    }
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+}

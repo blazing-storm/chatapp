@@ -1,8 +1,9 @@
 #default-page {
   width: 80%;
   text-align: center;
-  padding: 40px; }
-  #default-page a {
+  padding: 40px;
+
+  a {
     display: block;
     width: 70%;
     font-weight: 300;
@@ -11,4 +12,6 @@
     background: var(--color-green);
     color: inherit;
     border-radius: 2px;
-    cursor: pointer; }
+    cursor: pointer;
+  }
+}
