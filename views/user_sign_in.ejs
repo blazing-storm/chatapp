@@ -1,16 +1,32 @@
 <link rel="stylesheet" href="/css/sign_in.css">
 <div id="sign-in">
     <h1>
-        Sign In!
+        Sign In to Chat!
     </h1>
     
     <form action="/users/create-session" method="POST">
-        <label for="email">Email</label>
-        <input type="email" name="email" required>
-        
-        <label for="password">Password</label>
-        <input type="password" name="password" required>
-    
-        <input type="submit" value="Sign In">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input
+                type="email"
+                name="email"
+                class="form-control"
+                placeholder="abc@xyz.com"
+                required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input
+                type="password"
+                name="password"
+                class="form-control"
+                placeholder="Your password"
+                required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="submit-button">Sign In</button>
+        </div>
     </form>
 </div>

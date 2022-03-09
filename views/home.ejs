@@ -1,11 +1,7 @@
 <link rel="stylesheet" href="/css/home.css">
 
-<% if(locals.user) { %>
-    <%- include('_chat_box') -%>
-<% } else { %>
-    <%- include('_default') -%>
-<% } %>
-
+<!-- User has to be logged in to reach this page! -->
+<%- include('_chat_box') -%>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
 <script src="/js/chat_engine.js"></script>
