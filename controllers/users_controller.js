@@ -34,12 +34,17 @@ module.exports.create = function(req, res) {
             User.create(req.body, function(err, user) {
                 if(err) { console.log('Error in creating user during sign up'); return; }
 
+                // adding the default avatar
+                user.avatar = User.avatarPath + '/default-avatar.png';
+                user.save();
+
                 console.log(user);
                 return res.redirect('/users/sign-in');
             })
         }
         else {
             console.log('User already exists!');
+            req.flash('error', 'User already exists!');
             return res.redirect('back');
         }
     });

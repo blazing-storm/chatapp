@@ -11,6 +11,9 @@
     <nav class="navbar-items navbar-items-right">
         <% if(locals.user) { %>
             <div class="navbar-link">
+                <img src="<%= user.avatar %>" alt="<%= user.name %>"
+                size="23" width="23" height="23"
+                class="avatar circle">
                 <%= user.name %>
             </div>
 
