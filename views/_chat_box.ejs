@@ -11,16 +11,22 @@
     </div>
 
     <div id="user-chat-box">
-        <ul id="chat-messages-list">
-            <!-- <li class="other-message">
-                <sub>User A</sub>
-                <span> Other Message </span>
-            </li>
-            <li class="self-message">
-                <sub>User B</sub>
-                <span> Self Message </span>
-            </li> -->
-        </ul>
+        <div id="chat-messages-list">
+            <div class="other-message">
+                <img src="<%= user.avatar %>" alt="<%= user.name %>"
+                class="circle avatar chat-avatar">
+
+                <div class="message">
+                    <sub>John</sub>
+                    <span> Other Message </span>
+                </div>
+            </div>
+            <div class="self-message">
+                <div class="message">
+                    <span> Self Message </span>
+                </div>
+            </div>
+        </div>
 
         <div id="chat-message-input-container">
             <input type="text" id="chat-message-input" placeholder="Type message here...">

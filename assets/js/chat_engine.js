@@ -1,8 +1,9 @@
 class ChatEngine {
-    constructor(chatBoxId, userEmail, userName) {
+    constructor(chatBoxId, userEmail, userName, userAvatar) {
         this.chatBox = $(`#${chatBoxId}`);
         this.userEmail = userEmail;
         this.userName = userName;
+        this.userAvatar = userAvatar;
 
         this.socket = io.connect('http://localhost:5000');
 
@@ -20,7 +21,7 @@ class ChatEngine {
 
         self.socket.emit('join_room',  {
             user_email: self.userEmail,
-            chatroom: 'codeial'
+            chatroom: 'common-room'
         });
 
         self.socket.on('user_joined', function(data) {
@@ -35,7 +36,8 @@ class ChatEngine {
                     message: msg,
                     user_email: self.userEmail,
                     user_name: self.userName,
-                    chatroom: 'codeial'
+                    user_avatar: self.userAvatar,
+                    chatroom: 'common-room'
                 });
                 $('#chat-message-input').val('');
             }
@@ -44,22 +46,33 @@ class ChatEngine {
         self.socket.on('receive_message', function(data) {
             console.log('message received', data);
 
-            let newMessage = $('<li>');
+            let newMessage = $('<div>');
             
-            var messageType = 'other-message';
+            var messageType = 'self-message';
 
-            if(data.user_email == self.userEmail) {
-                messageType = 'self-message';
+            let message = $('<div>');
+            message.addClass('message');
+
+            if(data.user_email != self.userEmail) {
+                messageType = 'other-message';
+                let img = $('<img>', {
+                    'src': data.user_avatar,
+                    'alt': data.user_name
+                });
+                img.addClass('circle avatar chat-avatar');
+
+                newMessage.append(img);
+
+                message.append($('<sub>', {
+                    'html': data.user_name
+                }));
             }
 
-            newMessage.append($('<sub>', {
-                'html': data.user_name
-            }));
-
-            newMessage.append($('<span>', {
+            message.append($('<span>', {
                 'html': data.message
             }));
 
+            newMessage.append(message);
             newMessage.addClass(messageType);
 
             $('#chat-messages-list').append(newMessage);

@@ -34,6 +34,8 @@ module.exports.create = function(req, res) {
             User.create(req.body, function(err, user) {
                 if(err) { console.log('Error in creating user during sign up'); return; }
 
+                // console.log(User.avatarPath);
+
                 // adding the default avatar
                 user.avatar = User.avatarPath + '/default-avatar.png';
                 user.save();

@@ -7,6 +7,6 @@
 <script src="/js/chat_engine.js"></script>
 <% if(locals.user) { %>
     <script>
-        new ChatEngine('user-chat-box', '<%= locals.user.email %>', '<%= locals.user.name %>')
+        new ChatEngine('user-chat-box', '<%= locals.user.email %>', '<%= locals.user.name %>', "/uploads/users/avatars/default-avatar.png")
     </script>
 <% } %>
