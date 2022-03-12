@@ -4,7 +4,7 @@
         Create an Account!
     </h1>
     
-    <form action="/users/create" method="POST">
+    <form action="/users/create" enctype="multipart/form-data" method="POST">
         <div class="form-group">
             <label for="name">Name</label>
             <input
@@ -14,6 +14,7 @@
                 placeholder="John Doe"
                 required>
         </div>
+
         <div class="form-group">
             <label for="email">Email</label>
             <input
@@ -22,6 +23,15 @@
                 class="form-control"
                 placeholder="abc@xyz.com"
                 required>
+        </div>
+
+        <div class="form-group">
+            <label for="avatar">Profile Picture</label>
+            <input
+                type="file"
+                name="avatar"
+                class="form-control"
+                placeholder="Profile Picture">
         </div>
 
         <div class="form-group">

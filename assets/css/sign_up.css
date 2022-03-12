@@ -1,6 +1,10 @@
 #nav-sign-in {
   color: #a3a3a3; }
 
+#layout-main {
+  height: auto !important;
+  min-height: 500px; }
+
 #sign-up {
   width: 60%;
   text-align: center; }
@@ -24,7 +28,7 @@ form button {
   border: none; }
 
 form .form-group {
-  margin: 0 auto 1.2rem auto;
+  margin: 0 auto 1rem auto;
   padding: 0.4rem; }
   form .form-group .form-control {
     display: block;

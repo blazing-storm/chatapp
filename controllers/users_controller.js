@@ -24,6 +24,8 @@ module.exports.signIn = function (req, res) {
 
 // get the sign up data
 module.exports.create = function(req, res) {
+    console.log(req.body);
+
     if(req.body.password != req.body.confirm_password)
         return res.redirect('back');
 
@@ -31,6 +33,27 @@ module.exports.create = function(req, res) {
         if(err) { console.log('Error in finding user during sign up'); return; }
 
         if(!user) {
+            let user = new User();
+            User.uploadedAvatar(req, res, function(err) {
+                if(err) { console.log('*****Multer Error: ', err); }
+
+                user.name = req.body.name;
+                user.email = req.body.email;
+                user.password = req.body.password;
+
+                if(req.file) {
+                    user.avatar = User.avatarPath + '/' + req.file.filename;
+                }
+                else {
+                    user.avatar = User.avatarPath + '/default-avatar.png';
+                }
+
+                user.save();
+                console.log(user);
+                return res.redirect('/users/sign-in');
+            });
+
+            /*
             User.create(req.body, function(err, user) {
                 if(err) { console.log('Error in creating user during sign up'); return; }
 
@@ -43,6 +66,7 @@ module.exports.create = function(req, res) {
                 console.log(user);
                 return res.redirect('/users/sign-in');
             })
+            */
         }
         else {
             console.log('User already exists!');

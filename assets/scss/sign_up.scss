@@ -2,6 +2,11 @@
   color: #a3a3a3;
 }
 
+#layout-main {
+  height: auto !important;
+  min-height: 500px;
+}
+
 #sign-up {
   width: 60%;
   text-align: center;
