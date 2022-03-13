@@ -2,11 +2,38 @@
 $chat-header-color: rgba(27, 27, 50, 0.6);
 $other-message-color: #016792;
 $self-message-color: #019267;
+$avatar-size: 40px;
 .chat-avatar {
-  size: 45px;
-  width: 45px;
-  height: 45px;
+  size: $avatar-size;
+  width: $avatar-size;
+  height: $avatar-size;
 }
+
+/* Customizing the scrollbar */
+#chat-messages-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+#chat-messages-list::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+#chat-messages-list::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+#chat-messages-list::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+@supports (scrollbar-color: #888 #f1f1f1) {
+  #chat-messages-list {
+    scrollbar-color: #888 #f1f1f1;
+    scrollbar-width: thin;
+  }
+}
+
+/* Styling the page */
 
 #chatbox-container {
   width: 100%;
